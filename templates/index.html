@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Student Performance Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎓 AI Student Performance Prediction</h1>
+
+    <p class="description">
+        Enter the student's academic details below to predict
+        their expected final performance using Machine Learning.
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <label>Attendance Percentage</label>
+        <input
+            type="number"
+            name="attendance"
+            min="0"
+            max="100"
+            step="0.1"
+            placeholder="Example: 85"
+            required>
+
+        <label>Study Hours Per Day</label>
+        <input
+            type="number"
+            name="study_hours"
+            min="0"
+            max="24"
+            step="0.1"
+            placeholder="Example: 4"
+            required>
+
+        <label>Previous Exam Score</label>
+        <input
+            type="number"
+            name="previous_score"
+            min="0"
+            max="100"
+            step="0.1"
+            placeholder="Example: 75"
+            required>
+
+        <label>Assignments Completed</label>
+        <input
+            type="number"
+            name="assignments"
+            min="0"
+            step="1"
+            placeholder="Example: 8"
+            required>
+
+        <label>Internal Marks</label>
+        <input
+            type="number"
+            name="internal_marks"
+            min="0"
+            max="100"
+            step="0.1"
+            placeholder="Example: 78"
+            required>
+
+        <button type="submit">
+            Predict Performance
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
